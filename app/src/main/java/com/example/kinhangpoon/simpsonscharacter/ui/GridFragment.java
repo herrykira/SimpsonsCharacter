@@ -1,6 +1,5 @@
 package com.example.kinhangpoon.simpsonscharacter.ui;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,12 +7,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,7 +22,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kinhangpoon.simpsonscharacter.IPresenter;
 import com.example.kinhangpoon.simpsonscharacter.MyInterface;
 import com.example.kinhangpoon.simpsonscharacter.R;
 import com.example.kinhangpoon.simpsonscharacter.adapter.MyAdapter;
@@ -32,19 +32,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
-
 
 /**
- * Created by KinhangPoon on 16/2/2018.
+ * Created by KinhangPoon on 20/2/2018.
  */
 
-public class TitleFragment extends Fragment {
+public class GridFragment extends Fragment {
+
     RecyclerView recyclerView;
     ProgressDialog pd;
 //    ArrayList<Characters> charactersList;
     MyInterface myInterface;
-
     public String url ="http://api.duckduckgo.com/?q=simpsons+characters&format=json";
 
     @Override
@@ -53,17 +51,14 @@ public class TitleFragment extends Fragment {
         myInterface = (MyInterface) getActivity();
 
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.title_fragment,container,false);
-
-
-        recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        View view = inflater.inflate(R.layout.grid_fragment,container,false);
+        recyclerView = view.findViewById(R.id.recyclerview1);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),GridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
 
 //        pd = new ProgressDialog(getContext());
