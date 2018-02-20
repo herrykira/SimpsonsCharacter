@@ -1,8 +1,6 @@
 package com.example.kinhangpoon.simpsonscharacter;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -10,7 +8,6 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,9 +15,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.kinhangpoon.simpsonscharacter.adapter.MyAdapter;
 import com.example.kinhangpoon.simpsonscharacter.model.Characters;
-import com.example.kinhangpoon.simpsonscharacter.ui.DetailFragment;
+import com.example.kinhangpoon.simpsonscharacter.ui.details.DetailFragment;
 import com.example.kinhangpoon.simpsonscharacter.ui.GridFragment;
 import com.example.kinhangpoon.simpsonscharacter.ui.TitleFragment;
 
@@ -138,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,MyInter
     }
 
 
-    @Override
+    /*@Override
     public void detailFragment(boolean isTablet,DetailFragment detailFragment) {
         if(isTablet){
             getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.main2,detailFragment).commit();
@@ -156,5 +152,5 @@ public class MainActivity extends AppCompatActivity implements IMainView,MyInter
     @Override
     public Display showDisplay() {
         return MainActivity.this.getWindowManager().getDefaultDisplay();
-    }
+    }*/
 }
