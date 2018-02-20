@@ -44,7 +44,7 @@ public class DetailFragment extends Fragment implements IDetailsView{
         int position = getArguments().getInt("position");
         ArrayList<Characters> charactersList = getArguments().getParcelableArrayList("charactersList");
         Log.i("list size",charactersList.size()+"");
-
+        //
         //presetner evetnt is onViewCreated ---  mr presenter my view is ready -  ui event
         presenter.onViewCreated(view,position,charactersList);
         //view evernt is set the textview -- presenter has to update the view
