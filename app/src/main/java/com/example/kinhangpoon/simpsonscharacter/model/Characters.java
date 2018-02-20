@@ -3,12 +3,15 @@ package com.example.kinhangpoon.simpsonscharacter.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+
 /**
  * Created by KinhangPoon on 17/2/2018.
  */
 
 public class Characters implements Parcelable{
     String title,description,imageUrl;
+    public static ArrayList<Characters> charactersList;
 
     public Characters(String title, String description, String imageUrl) {
         this.title = title;
